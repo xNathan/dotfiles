@@ -5,7 +5,7 @@ set title "change the terminal's title
 
 set nobackup
 set noswapfile
-set nu!
+set nu
 set cursorline
 set ruler
 set autoread
