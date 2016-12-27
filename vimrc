@@ -2,9 +2,12 @@ set nocompatible
 
 set hidden
 set title "change the terminal's title
+set wildmenu
+set completeopt-=preview
 
 set nobackup
 set noswapfile
+set noundofile
 set nu
 set cursorline
 set ruler
@@ -29,7 +32,6 @@ set autoindent "Auto indent
 set smartindent "Smart indent
 set nowrap "No wrap line 
 
-
 set incsearch "increase search
 set hlsearch "highlight search result
 
@@ -37,7 +39,6 @@ set smartcase
 
 "Show matching brackets
 set showmatch
-
 
 "Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -47,7 +48,6 @@ set foldlevelstart=99 "start out with everythin unfold
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
 
 let mapleader=','
 nnoremap ; :
@@ -63,6 +63,10 @@ map <up> <nop>
 map <left> <nop>
 map <right> <nop>
 map <down> <nop>
+
+nnoremap <leader>w :w!<CR>
+nnoremap <leader>q :q!<CR>
+nnoremap <leader>wq :wq!<CR>
 
 "Enter into split windows
 nnoremap <C-h> <C-w>h
