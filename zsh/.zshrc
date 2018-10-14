@@ -33,20 +33,10 @@ if ! zgen saved; then
   zgen save
 fi
 
-# added by Anaconda3 installer
-export PATH="/Users/nathan/anaconda3/bin:$PATH"
+# Load all files from ~/zshrc.d directory
+if [ -d $HOME/.zshrc.d ]; then
+  for file in $HOME/.zshrc.d/*.zsh; do
+    source $file
+  done
+fi
 
-# pipenv补全
-#eval "$(pipenv --completion)"
-
-JAVA_HOME=$(/usr/libexec/java_home)
-PATH=$JAVA_HOME/bin:$PATH
-CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-export JAVA_HOME
-export CLASSPATH
-export PATH
-export SPARK_HOME="/Users/nathan/runtime/spark-2.2.0-bin-hadoop2.7"
-
-alias sd='ssh dev'
-alias sy='ssh ym'
-alias pc='proxychains4'
