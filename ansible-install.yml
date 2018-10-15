@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  tasks:
+  - name: install zgen
+    git:
+        repo: "https://github.com/tarjoilija/zgen.git"
+        dest: "${HOME}/.zgen"
+
+  - name: install vundle.vim
+    git:
+        repo: "https://github.com/VundleVim/Vundle.vim.git"
+        dest: "${HOME}/.vim/bundle/Vundle.vim"
+
+  - name: install ack
+    homebrew:
+        name: ack
+        state: present
