@@ -87,6 +87,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'mileszs/ack.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -96,3 +97,7 @@ filetype plugin indent on    " required
 
 set laststatus=2
 set noshowmode
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
