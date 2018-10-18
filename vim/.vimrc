@@ -30,6 +30,7 @@ set nowrap "No wrap line
 set incsearch "increase search
 set hlsearch "highlight search result
 
+set ignorecase
 set smartcase
 
 "Show matching brackets
