@@ -90,6 +90,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'mileszs/ack.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'valloric/youcompleteme'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -105,3 +106,5 @@ if executable('ag')
 endif
 
 map <C-n> :NERDTreeToggle<CR>
+
+nmap <F8> :TagbarToggle<CR>
