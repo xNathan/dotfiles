@@ -121,3 +121,5 @@ let g:deoplete#enable_at_startup = 1
 nnoremap <silent> <C-p> :Files<CR>
 
 let g:vim_markdown_folding_disabled = 1
+"let g:ackpreview = 1
+
