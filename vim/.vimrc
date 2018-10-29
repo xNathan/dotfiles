@@ -116,3 +116,5 @@ map <C-n> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
 let g:deoplete#enable_at_startup = 1
+
+nnoremap <silent> <C-p> :Files<CR>
