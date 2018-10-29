@@ -73,6 +73,9 @@ nnoremap <leader><space> :noh<cr>
 " Yanking to the end of the line
 nnoremap Y y$
 
+" sudo write
+cmap w!! w !sudo tee >/dev/null %
+
 " vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
