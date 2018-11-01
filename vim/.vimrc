@@ -97,6 +97,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
+Plug 'w0rp/ale'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -118,11 +119,12 @@ elseif executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-map <C-n> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
+map <C-o> :NERDTreeToggle<CR>
+nmap <leader>tb :TagbarToggle<CR>
 
 let g:deoplete#enable_at_startup = 1
 
-nnoremap <silent> <C-p> :Files<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>rg :Rg<CR>
 
 let g:vim_markdown_folding_disabled = 1
