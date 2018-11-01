@@ -42,7 +42,7 @@ set ffs=unix,dos,mac
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-let mapleader=','
+let mapleader=' '
 nnoremap ; :
 noremap H _
 noremap L $
