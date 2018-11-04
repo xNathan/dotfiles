@@ -93,6 +93,8 @@ Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -121,3 +123,8 @@ let g:deoplete#enable_at_startup = 1
 nnoremap <silent> <C-p> :Files<CR>
 
 let g:vim_markdown_folding_disabled = 1
+
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', 'UltiSnips']
+" vertically split ultisnips edit window
+let g:UltiSnipsEditSplit="vertical"
+
