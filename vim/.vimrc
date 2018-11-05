@@ -98,6 +98,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'
 Plug 'w0rp/ale'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -128,3 +130,8 @@ nnoremap <leader>f :Files<CR>
 nnoremap <leader>rg :Rg<CR>
 
 let g:vim_markdown_folding_disabled = 1
+
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', 'UltiSnips']
+" vertically split ultisnips edit window
+let g:UltiSnipsEditSplit="vertical"
+
