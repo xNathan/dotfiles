@@ -42,7 +42,7 @@ set ffs=unix,dos,mac
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-let mapleader=','
+let mapleader=' '
 nnoremap ; :
 noremap H _
 noremap L $
@@ -73,6 +73,9 @@ nnoremap <leader><space> :noh<cr>
 " Yanking to the end of the line
 nnoremap Y y$
 
+" sudo write
+cmap w!! w !sudo tee >/dev/null %
+
 " vim-plug
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -93,6 +96,10 @@ Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'godlygeek/tabular'
+Plug 'w0rp/ale'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -105,6 +112,7 @@ endif
 call plug#end()
 
 set laststatus=2
+set showtabline=2
 set noshowmode
 
 if executable('rg')
@@ -113,13 +121,18 @@ elseif executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-map <C-n> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
+nmap <leader>tb :TagbarToggle<CR>
 
 let g:deoplete#enable_at_startup = 1
 
-nnoremap <silent> <C-p> :Files<CR>
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>rg :Rg<CR>
 
 let g:vim_markdown_folding_disabled = 1
 "let g:ackpreview = 1
+
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', 'UltiSnips']
+" vertically split ultisnips edit window
+let g:UltiSnipsEditSplit="vertical"
 
