@@ -119,7 +119,7 @@ elseif executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-map <C-o> :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 nmap <leader>tb :TagbarToggle<CR>
 
 let g:deoplete#enable_at_startup = 1
