@@ -101,7 +101,7 @@ Plug 'w0rp/ale'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'raimondi/delimitmate'
-Plug 'ekalinin/Dockerfile.vim'
+Plug 'sheerun/vim-polyglot'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
