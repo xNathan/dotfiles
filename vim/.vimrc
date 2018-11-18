@@ -85,7 +85,11 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'itchyny/lightline.vim'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+"Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -153,3 +157,5 @@ set background=dark
 
 let g:python3_host_prog = $HOME . '/.pyenv/versions/nvim3/bin/python'
 let delimitMate_expand_cr = 1
+
+let g:airline_powerline_fonts = 1
