@@ -1,3 +1,15 @@
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator ram time)
+
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
@@ -8,7 +20,8 @@ if ! zgen saved; then
 
     # prezto options
     # zgen prezto editor key-bindings 'vi'
-    zgen prezto prompt theme 'sorin'
+    #zgen prezto prompt theme 'sorin'
+    zgen prezto prompt theme 'powerlevel9k'
     zgen prezto syntax-highlighting color 'yes'
     zgen prezto utility:ls color 'yes'
 
