@@ -102,6 +102,10 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'raimondi/delimitmate'
 Plug 'sheerun/vim-polyglot'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'zchee/deoplete-jedi'
+Plug 'davidhalter/jedi-vim'
+Plug 'morhetz/gruvbox'
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -138,3 +142,14 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', 'UltiSnips']
 " vertically split ultisnips edit window
 let g:UltiSnipsEditSplit="vertical"
 
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+
+" disable autocompletion, cause we use deoplete for completion
+let g:jedi#completions_enabled = 0
+
+colorscheme gruvbox
+set background=dark
+
+let g:python3_host_prog = $HOME . '/.pyenv/versions/nvim3/bin/python'
+let delimitMate_expand_cr = 1
