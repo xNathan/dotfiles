@@ -33,6 +33,13 @@ set hlsearch "highlight search result
 set ignorecase
 set smartcase
 
+set lazyredraw
+
+set wrap
+
+set wildmenu
+set wildmode=longest:full,full
+
 "Show matching brackets
 set showmatch
 
@@ -131,7 +138,7 @@ elseif executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
-map <leader>n :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 nmap <leader>tb :TagbarToggle<CR>
 
 let g:deoplete#enable_at_startup = 1
