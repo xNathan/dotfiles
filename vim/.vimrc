@@ -144,6 +144,7 @@ nmap <leader>tb :TagbarToggle<CR>
 let g:deoplete#enable_at_startup = 1
 
 nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>rg :Rg<CR>
 
 let g:vim_markdown_folding_disabled = 1
