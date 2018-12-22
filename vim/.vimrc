@@ -167,3 +167,5 @@ let g:python3_host_prog = $HOME . '/.pyenv/versions/nvim3/bin/python'
 let delimitMate_expand_cr = 1
 
 let g:airline_powerline_fonts = 1
+
+let g:vim_markdown_frontmatter=1
