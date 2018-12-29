@@ -117,6 +117,8 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'zchee/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
 Plug 'morhetz/gruvbox'
+" Golang
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -142,6 +144,8 @@ map <C-n> :NERDTreeToggle<CR>
 nmap <leader>tb :TagbarToggle<CR>
 
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
 
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
