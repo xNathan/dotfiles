@@ -119,6 +119,7 @@ Plug 'davidhalter/jedi-vim'
 Plug 'morhetz/gruvbox'
 " Golang
 Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
