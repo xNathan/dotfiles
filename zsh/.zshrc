@@ -1,50 +1,58 @@
-# Check if zplug is installed
-if [[ ! -d ~/.zplug ]]; then
-    git clone https://github.com/zplug/zplug ~/.zplug
-    source ~/.zplug/init.zsh && zplug update --self
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir virtualenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator ram time)
+
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
+
+# if the init scipt doesn't exist
+if ! zgen saved; then
+
+    echo "Creating a zgen save"
+
+    # prezto options
+    # zgen prezto editor key-bindings 'vi'
+    zgen prezto prompt theme 'sorin'
+    #zgen prezto prompt theme 'powerlevel9k'
+    zgen prezto syntax-highlighting color 'yes'
+    zgen prezto utility:ls color 'yes'
+
+    # prezto and modules
+    zgen prezto
+    zgen prezto archive
+    zgen prezto git
+    zgen prezto docker
+    zgen prezto rsync
+    zgen prezto directory
+    zgen prezto history
+    zgen prezto utility
+    zgen prezto completion  # must be loaded after utility
+    zgen prezto autosuggestions
+    # zgen prezto tmux
+    zgen prezto command-not-found
+    zgen prezto fasd  # loaded after completion
+    zgen prezto syntax-highlighting  # before prompt and history-substring-search
+    zgen prezto history-substring-search
+    zgen prezto prompt
+
+  zgen save
 fi
 
-source ~/.zplug/init.zsh
-
-# prezto and modules
-zplug "modules/archive", from:prezto
-zplug "modules/git", from:prezto
-zplug "modules/docker", from:prezto
-zplug "modules/rsync", from:prezto
-zplug "modules/directory", from:prezto
-zplug "modules/history", from:prezto
-zplug "modules/utility", from:prezto
-zplug "modules/completion", from:prezto  # must be loaded after utility
-zplug "modules/autosuggestions", from:prezto
-zplug "modules/command-not-found", from:prezto
-zplug "modules/fasd", from:prezto  # loaded after completion
-zplug "modules/syntax-highlighting", from:prezto  # before prompt and history-substring-search
-zplug "modules/history-substring-search", from:prezto
-zplug "modules/prompt", from:prezto
-
-zstyle ":prezto:module:editor" key-bindings "vi"
-zstyle ":prezto:module:prompt" theme "sorin"
-zstyle ":prezto:module:syntax-highlighting" color "yes"
-zstyle ":prezto:module:utility:ls" color "yes"
-
-# Other plugins
-zplug "plugins/tmux",   from:oh-my-zsh
-
-# Load theme file
-zplug "dracula/zsh", as:theme
-
-# Load local zsh
-zplug "~/.zshrc.d", from:local, defer:2
-
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+# Load all files from ~/zshrc.d directory
+if [ -d $HOME/.zshrc.d ]; then
+  for file in $HOME/.zshrc.d/*.zsh; do
+    source $file
+  done
 fi
-
-# Then, source plugins and add commands to $PATH
-zplug load
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
