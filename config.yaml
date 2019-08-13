@@ -18,6 +18,9 @@ dotfiles:
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
+  d_spacemacs.d:
+    src: spacemacs.d
+    dst: ~/.spacemacs.d
 profiles:
   mac:
     dotfiles:
@@ -26,3 +29,4 @@ profiles:
     - d_pip
     - f_vimrc
     - d_nvim
+    - d_spacemacs.d
