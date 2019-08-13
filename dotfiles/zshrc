@@ -1,4 +1,4 @@
-POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_MODE='nerdfont'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir virtualenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator ram time)
 
