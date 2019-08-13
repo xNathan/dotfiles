@@ -21,6 +21,9 @@ dotfiles:
   d_spacemacs.d:
     src: spacemacs.d
     dst: ~/.spacemacs.d
+  d_aria2:
+    src: aria2
+    dst: ~/.aria2
 profiles:
   mac:
     dotfiles:
@@ -30,3 +33,4 @@ profiles:
     - f_vimrc
     - d_nvim
     - d_spacemacs.d
+    - d_aria2
