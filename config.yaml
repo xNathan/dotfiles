@@ -20,6 +20,10 @@ dotfiles:
     src: vim
     dst: ~/.vim
     link: link_children
+    upignore:
+    - "autoload"
+    - "plugged"
+    - ".netrwhist"
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
