@@ -9,6 +9,7 @@ dotfiles:
   d_zshrc.d:
     src: zshrc.d
     dst: ~/.zshrc.d
+    link: link_children
   d_pip:
     src: pip
     dst: ~/.pip
