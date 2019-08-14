@@ -1,0 +1,15 @@
+Xft.dpi: 108
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+
+URxvt.font:xft:DejaVu Sans Mono,xft:Font Awesome 5 Free:pixelsize=12
+URxvt.depth: 32
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt.background: [85]#002b36
+URxvt.foreground: #93a1a1
+URxvt.saveLines: 5000
