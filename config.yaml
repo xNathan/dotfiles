@@ -44,6 +44,8 @@ dotfiles:
     dst: ~/.config/i3
 profiles:
   mac:
+    variables:
+      aria2_alloc: prealloc
     dotfiles:
     - f_zshrc
     - d_zshrc.d
@@ -56,6 +58,8 @@ profiles:
   arch:
     include:
     - mac
+    variables:
+      aria2_alloc: falloc
     dotfiles:
     - f_xinitrc
     - f_xresources
