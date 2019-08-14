@@ -21,9 +21,9 @@ dotfiles:
     dst: ~/.vim
     link: link_children
     upignore:
-    - "autoload"
-    - "plugged"
-    - ".netrwhist"
+    - autoload
+    - plugged
+    - .netrwhist
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
@@ -42,6 +42,9 @@ dotfiles:
   d_i3:
     src: config/i3
     dst: ~/.config/i3
+  f_isort.cfg:
+    src: isort.cfg
+    dst: ~/.isort.cfg
 profiles:
   mac:
     variables:
@@ -55,6 +58,7 @@ profiles:
     - d_nvim
     - d_spacemacs.d
     - d_aria2
+    - f_isort.cfg
   arch:
     include:
     - mac
