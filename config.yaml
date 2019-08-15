@@ -51,6 +51,9 @@ dotfiles:
   d_fontconfig:
     src: config/fontconfig
     dst: ~/.config/fontconfig
+  f_tmux.conf:
+    src: tmux.conf
+    dst: ~/.tmux.conf
 profiles:
   mac:
     variables:
@@ -66,6 +69,7 @@ profiles:
     - d_aria2
     - f_isort.cfg
     - d_alacritty
+    - f_tmux.conf
   arch:
     include:
     - mac
