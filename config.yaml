@@ -54,6 +54,9 @@ dotfiles:
   f_tmux.conf:
     src: tmux.conf
     dst: ~/.tmux.conf
+  d_polybar:
+    src: config/polybar
+    dst: ~/.config/polybar
 profiles:
   mac:
     variables:
@@ -80,3 +83,4 @@ profiles:
     - f_xresources
     - d_i3
     - d_fontconfig
+    - d_polybar
