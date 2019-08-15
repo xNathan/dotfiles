@@ -45,6 +45,9 @@ dotfiles:
   f_isort.cfg:
     src: isort.cfg
     dst: ~/.isort.cfg
+  d_alacritty:
+    src: config/alacritty
+    dst: ~/.config/alacritty
 profiles:
   mac:
     variables:
@@ -59,6 +62,7 @@ profiles:
     - d_spacemacs.d
     - d_aria2
     - f_isort.cfg
+    - d_alacritty
   arch:
     include:
     - mac
