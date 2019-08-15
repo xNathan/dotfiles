@@ -48,6 +48,9 @@ dotfiles:
   d_alacritty:
     src: config/alacritty
     dst: ~/.config/alacritty
+  d_fontconfig:
+    src: config/fontconfig
+    dst: ~/.config/fontconfig
 profiles:
   mac:
     variables:
@@ -72,3 +75,4 @@ profiles:
     - f_xinitrc
     - f_xresources
     - d_i3
+    - d_fontconfig
