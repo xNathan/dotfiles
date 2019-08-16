@@ -57,6 +57,9 @@ dotfiles:
   d_polybar:
     src: config/polybar
     dst: ~/.config/polybar
+  f_gpg-agent.conf:
+    src: gnupg/gpg-agent.conf
+    dst: ~/.gnupg/gpg-agent.conf
 profiles:
   mac:
     variables:
@@ -73,6 +76,7 @@ profiles:
     - f_isort.cfg
     - d_alacritty
     - f_tmux.conf
+    - f_gpg-agent.conf
   arch:
     include:
     - mac
