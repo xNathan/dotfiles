@@ -11,3 +11,9 @@ alias ts='tmux new-session -s'
 alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
+
+function dotdrop() {
+    (cd $HOME/.dotfiles && pipenv run ./dotdrop.sh $@)
+}
+alias dotgit="git -C $HOME/.dotfiles"
+alias dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push; dotdrop install"
