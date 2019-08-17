@@ -8,7 +8,7 @@ if ! zgen saved; then
 
     # prezto options
     zgen prezto editor key-bindings 'vi'
-    zgen prezto prompt theme 'sorin'
+    zgen prezto prompt theme 'powerlevel10k'
     zgen prezto syntax-highlighting color 'yes'
     zgen prezto utility:ls color 'yes'
 
