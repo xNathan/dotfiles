@@ -19,12 +19,13 @@ if ! zgen saved; then
     zgen prezto git
     zgen prezto docker
     zgen prezto rsync
+    zgen prezto python
     zgen prezto directory
     zgen prezto history
     zgen prezto utility
     zgen prezto completion  # must be loaded after utility
     zgen prezto autosuggestions
-    # zgen prezto tmux
+    zgen prezto tmux
     zgen prezto command-not-found
     zgen prezto fasd  # loaded after completion
     zgen prezto syntax-highlighting  # before prompt and history-substring-search
@@ -36,7 +37,7 @@ if ! zgen saved; then
     zgen prezto pacman
     {%@@ endif @@%}
 
-  zgen save
+    zgen save
 fi
 
 # Load all files from ~/zshrc.d directory
