@@ -167,7 +167,7 @@ let g:ale_lint_on_enter = 0
 " disable autocompletion, cause we use deoplete for completion
 let g:jedi#completions_enabled = 0
 
-colorscheme gruvbox
+silent! colorscheme gruvbox
 set background=dark
 
 let g:python3_host_prog = $HOME . '/.pyenv/versions/nvim3/bin/python'
