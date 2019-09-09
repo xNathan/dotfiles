@@ -22,6 +22,7 @@ if ! zgen saved; then
     zgen prezto python
     zgen prezto directory
     zgen prezto history
+    zgen prezto gnu-utility # before before utility
     zgen prezto utility
     zgen prezto completion  # must be loaded after utility
     zgen prezto autosuggestions
