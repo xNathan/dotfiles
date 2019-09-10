@@ -7,10 +7,9 @@ if ! zgen saved; then
     echo "Creating a zgen save"
 
     # prezto options
+    zgen prezto '*:*' color 'yes'
     zgen prezto editor key-bindings 'vi'
     zgen prezto prompt theme 'powerlevel10k'
-    zgen prezto syntax-highlighting color 'yes'
-    zgen prezto utility:ls color 'yes'
 
     # prezto and modules
     zgen prezto
