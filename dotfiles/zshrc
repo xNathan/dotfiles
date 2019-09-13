@@ -1,3 +1,6 @@
+# disable zgen autoload prezto default config
+export ZGEN_PREZTO_LOAD_DEFAULT=0
+
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
