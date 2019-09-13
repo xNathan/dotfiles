@@ -17,6 +17,7 @@ if ! zgen saved; then
     # prezto and modules
     zgen prezto
     # Common modules
+    zgen prezto editor
     zgen prezto archive
     zgen prezto git
     zgen prezto docker
@@ -32,7 +33,6 @@ if ! zgen saved; then
     zgen prezto command-not-found
     zgen prezto fasd  # loaded after completion
     zgen prezto syntax-highlighting  # before prompt and history-substring-search
-    zgen prezto history-substring-search
     zgen prezto prompt
 
     {%@@ if profile == "arch" @@%}
