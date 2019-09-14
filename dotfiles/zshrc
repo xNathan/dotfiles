@@ -33,6 +33,7 @@ if ! zgen saved; then
     zgen prezto command-not-found
     zgen prezto fasd  # loaded after completion
     zgen prezto syntax-highlighting  # before prompt and history-substring-search
+    zgen prezto history-substring-search
     zgen prezto prompt
 
     {%@@ if profile == "arch" @@%}
