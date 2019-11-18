@@ -114,11 +114,11 @@ Plug 'honza/vim-snippets'
 Plug 'raimondi/delimitmate'
 Plug 'sheerun/vim-polyglot'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'zchee/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
 Plug 'morhetz/gruvbox'
 " Golang
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'nathangrigg/vim-beancount'
