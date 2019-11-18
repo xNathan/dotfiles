@@ -229,7 +229,7 @@ bindsym $mod+r mode "resize"
 # start up some programs
 
 exec --no-startup-id fcitx
-exec_always --no-startup-id compton -b
+exec_always --no-startup-id picom -b
 exec_always --no-startup-id feh --bg-scale "/home/nathan/Pictures/bg.jpg"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
