@@ -17,3 +17,6 @@ function dotdrop() {
 }
 alias dotgit="git -C $HOME/.dotfiles"
 alias dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push; dotdrop install"
+
+alias vim='nvim'
+alias vi='vim'
