@@ -33,8 +33,8 @@ width = 100%
 height = 25
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 3.0
-fixed-center = false
+radius = 1.0
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -42,11 +42,11 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 3
+border-size = 0
 border-color = #00000000
 
-padding-left = 2
-padding-right = 2
+padding-left = 0
+padding-right = 0
 
 module-margin-left = 2
 module-margin-right = 2
@@ -55,6 +55,7 @@ font-0 = "Noto Sans Mono:antialias=false;pixelsize=12;1"
 font-1 = "Hack Nerd Font:pixelsize=12;1"
 
 modules-left = i3
+modules-center = xwindow
 modules-right = memory cpu eth date
 
 tray-position = right
@@ -62,7 +63,7 @@ tray-padding = 2
 ; tray-background = #0063ff
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 
@@ -112,6 +113,10 @@ label-urgent-padding =1
 ; Separator in between workspaces
 ; label-separator = |
 
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:75:...%
+format-padding = 5
 
 [module/cpu]
 type = internal/cpu
