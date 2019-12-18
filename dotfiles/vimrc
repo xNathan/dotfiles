@@ -172,6 +172,7 @@ let g:UltiSnipsEditSplit="vertical"
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+let g:ale_python_black_executable = $HOME . '/.pyenv/versions/nvim3/bin/black'
 
 " disable autocompletion, cause we use deoplete for completion
 let g:jedi#completions_enabled = 0
