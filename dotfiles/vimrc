@@ -3,7 +3,7 @@ set nocompatible
 set nobackup
 set noswapfile
 set noundofile
-set nu
+set nu rnu
 set cursorline
 set ruler
 set autoread
@@ -25,7 +25,6 @@ set softtabstop=4
 
 set autoindent "Auto indent
 set smartindent "Smart indent
-set nowrap "No wrap line 
 
 set incsearch "increase search
 set hlsearch "highlight search result
@@ -34,6 +33,12 @@ set ignorecase
 set smartcase
 
 set lazyredraw
+set splitright
+set splitbelow
+
+" Visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
 
 set wrap
 
@@ -48,6 +53,8 @@ set ffs=unix,dos,mac
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
+
+set scrolloff=3
 
 let mapleader=' '
 nnoremap ; :
