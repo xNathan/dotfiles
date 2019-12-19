@@ -63,6 +63,9 @@ dotfiles:
   f_p10k.zsh:
     src: p10k.zsh
     dst: ~/.p10k.zsh
+  f_xmodmap:
+    src: Xmodmap
+    dst: ~/.Xmodmap
 profiles:
   mac:
     variables:
@@ -92,3 +95,4 @@ profiles:
     - d_i3
     - d_fontconfig
     - d_polybar
+    - f_xmodmap
