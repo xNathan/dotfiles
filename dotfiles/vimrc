@@ -182,7 +182,9 @@ silent! colorscheme gruvbox
 set background=dark
 
 let g:python3_host_prog = $HOME . '/.pyenv/versions/nvim3/bin/python'
+
 let delimitMate_expand_cr = 1
+au FileType python let b:delimitMate_nesting_quotes = ['"']
 
 let g:airline_powerline_fonts = 1
 
