@@ -129,6 +129,7 @@ Plug 'honza/vim-snippets'
 Plug 'raimondi/delimitmate'
 Plug 'sheerun/vim-polyglot'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'justinmk/vim-sneak'
 
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
