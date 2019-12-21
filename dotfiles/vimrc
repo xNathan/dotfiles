@@ -10,6 +10,7 @@ set autoread
 set t_vb=
 set t_Co=256
 set updatetime=250
+set signcolumn=yes
 
 syntax enable
 syntax on
@@ -45,8 +46,14 @@ set wrap
 set wildmenu
 set wildmode=longest:full,full
 
+set completeopt-=preview
+set completeopt+=noinsert
+
 "Show matching brackets
 set showmatch
+
+" Required for operations modifying multiple buffers like rename.
+set hidden
 
 "Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -122,8 +129,15 @@ Plug 'honza/vim-snippets'
 Plug 'raimondi/delimitmate'
 Plug 'sheerun/vim-polyglot'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'davidhalter/jedi-vim'
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+
+"Plug 'deoplete-plugins/deoplete-jedi'
+"Plug 'davidhalter/jedi-vim'
 Plug 'morhetz/gruvbox'
 " Golang
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
@@ -131,10 +145,13 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'nathangrigg/vim-beancount'
 
+Plug 'Shougo/echodoc.vim'
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 else
   Plug 'Shougo/deoplete.nvim'
+  Plug 'Shougo/defx.nvim'
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
@@ -174,6 +191,7 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 let g:ale_python_black_executable = $HOME . '/.pyenv/versions/nvim3/bin/black'
+let g:ale_python_pyls_executable = $HOME . '/.pyenv/versions/nvim3/bin/pyls'
 
 " disable autocompletion, cause we use deoplete for completion
 let g:jedi#completions_enabled = 0
@@ -189,3 +207,32 @@ au FileType python let b:delimitMate_nesting_quotes = ['"']
 let g:airline_powerline_fonts = 1
 
 let g:vim_markdown_frontmatter=1
+
+
+let g:LanguageClient_serverCommands = {
+    \ 'python': [$HOME . '/.pyenv/versions/nvim3/bin/pyls', '-vv', '--log-file', '/tmp/pyls.log'],
+    \ }
+
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+function SetLSPShortcuts()
+  nnoremap <leader>ld :call LanguageClient#textDocument_definition()<CR>
+  nnoremap <leader>lr :call LanguageClient#textDocument_rename()<CR>
+  nnoremap <leader>lf :call LanguageClient#textDocument_formatting()<CR>
+  nnoremap <leader>lt :call LanguageClient#textDocument_typeDefinition()<CR>
+  nnoremap <leader>lx :call LanguageClient#textDocument_references()<CR>
+  nnoremap <leader>la :call LanguageClient_workspace_applyEdit()<CR>
+  nnoremap <leader>lc :call LanguageClient#textDocument_completion()<CR>
+  nnoremap <leader>lh :call LanguageClient#textDocument_hover()<CR>
+  nnoremap <leader>ls :call LanguageClient_textDocument_documentSymbol()<CR>
+  nnoremap <leader>lm :call LanguageClient_contextMenu()<CR>
+endfunction()
+
+augroup LSP
+  autocmd!
+  autocmd FileType python call SetLSPShortcuts()
+augroup END
+
+let g:echodoc#enable_at_startup = 1
