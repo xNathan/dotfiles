@@ -66,6 +66,9 @@ dotfiles:
   f_xmodmap:
     src: Xmodmap
     dst: ~/.Xmodmap
+  d_git:
+    src: config/git
+    dst: ~/.config/git
 profiles:
   mac:
     variables:
@@ -79,6 +82,7 @@ profiles:
     - d_nvim
     - d_spacemacs.d
     - d_aria2
+    - d_git
     - f_isort.cfg
     - d_alacritty
     - f_tmux.conf
