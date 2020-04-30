@@ -20,6 +20,7 @@ if ! zgen saved; then
     zgen prezto editor
     zgen prezto archive
     zgen prezto git
+    zgen prezto gpg
     zgen prezto docker
     zgen prezto rsync
     zgen prezto python
