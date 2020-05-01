@@ -12,3 +12,5 @@ if [[ "$(command -v nvim)" ]]; then
     export EDITOR=nvim
     export VISUAL=$EDITOR
 fi
+
+export PATH="$PATH:$HOME/.local/bin"
