@@ -69,6 +69,9 @@ dotfiles:
   d_git:
     src: config/git
     dst: ~/.config/git
+  f_zshenv:
+    src: zshenv
+    dst: ~/.zshenv
 profiles:
   mac:
     variables:
@@ -88,6 +91,7 @@ profiles:
     - f_tmux.conf
     - f_gpg-agent.conf
     - f_p10k.zsh
+    - f_zshenv
   arch:
     include:
     - mac
