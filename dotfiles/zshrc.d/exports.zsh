@@ -13,4 +13,4 @@ if [[ "$(command -v nvim)" ]]; then
     export VISUAL=$EDITOR
 fi
 
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.poetry/bin:$HOME/.local/bin:$PATH"
