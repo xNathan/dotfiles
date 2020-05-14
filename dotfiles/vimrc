@@ -64,7 +64,7 @@ set backspace=indent,eol,start
 set scrolloff=3
 
 let mapleader=' '
-nnoremap ; :
+"nnoremap ; :
 noremap H _
 noremap L $
 nnoremap j gj
