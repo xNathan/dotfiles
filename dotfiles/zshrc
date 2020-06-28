@@ -1,3 +1,7 @@
+if [[ ! -d $HOME/.zgen ]]; then
+    git clone https://github.com/tarjoilija/zgen.git $HOME/.zgen
+fi
+
 # disable zgen autoload prezto default config
 export ZGEN_PREZTO_LOAD_DEFAULT=0
 
