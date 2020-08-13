@@ -47,14 +47,13 @@ if ! zgen saved; then
     {%@@ endif @@%}
 
     zgen load skywind3000/z.lua
-
-    # Load all files from ~/zshrc.d directory
-    if [ -d $HOME/.zshrc.d ]; then
-      for file in $HOME/.zshrc.d/*.zsh; do
-        zgen load $file
-      done
-    fi
-
     zgen save
+fi
+
+# Load all files from ~/zshrc.d directory
+if [ -d $HOME/.zshrc.d ]; then
+  for file in $HOME/.zshrc.d/*.zsh; do
+    source $file
+  done
 fi
 
