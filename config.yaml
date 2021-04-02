@@ -2,6 +2,7 @@ config:
   backup: true
   create: true
   dotpath: dotfiles
+  ignore_missing_in_dotdrop: true
 dotfiles:
   f_zshrc:
     src: zshrc
@@ -20,10 +21,6 @@ dotfiles:
     src: vim
     dst: ~/.vim
     link: link_children
-    upignore:
-    - autoload
-    - plugged
-    - .netrwhist
   d_nvim:
     src: config/nvim
     dst: ~/.config/nvim
@@ -61,10 +58,6 @@ dotfiles:
     src: gnupg
     dst: ~/.gnupg
     chmod: 700
-    cmpignore:
-      - '!*.conf'
-    upignore:
-      - '!*.conf'
   f_p10k.zsh:
     src: p10k.zsh
     dst: ~/.p10k.zsh
