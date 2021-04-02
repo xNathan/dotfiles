@@ -6,11 +6,10 @@
 
 ```bash
 $ git clone https://github.com/xNathan/dotfiles.git ~/.dotfiles
-$ cd ~/.dotfiles
-$ pipenv install
-$ pipenv run ./dotdrop.sh install -p mac
+$ pipx install dotdrop
+$ dotdrop install -p mac
 # 如果是 Archlinux，运行：
-$ pipenv run ./dotdrop.sh install -p arch
+$ dotdrop install -p arch
 ```
 
 # 依赖：
