@@ -61,6 +61,10 @@ dotfiles:
     src: gnupg
     dst: ~/.gnupg
     chmod: 700
+    cmpignore:
+      - '!*.conf'
+    upignore:
+      - '!*.conf'
   f_p10k.zsh:
     src: p10k.zsh
     dst: ~/.p10k.zsh
