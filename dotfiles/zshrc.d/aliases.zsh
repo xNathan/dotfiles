@@ -12,6 +12,8 @@ alias tl='tmux list-sessions'
 alias tksv='tmux kill-server'
 alias tkss='tmux kill-session -t'
 
+
+alias dotdrop="dotdrop --cfg=$HOME/.dotfiles/config.yaml"
 alias dotgit="git -C $HOME/.dotfiles"
 alias dotsync="dotgit pull && dotgit add -A && dotgit commit && dotgit push; dotdrop install"
 
