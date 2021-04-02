@@ -6,7 +6,10 @@
 
 ```bash
 $ git clone https://github.com/xNathan/dotfiles.git ~/.dotfiles
+
+$ brew install libmagic  # for macOS
 $ pipx install dotdrop
+
 $ dotdrop install -p mac
 # 如果是 Archlinux，运行：
 $ dotdrop install -p arch
