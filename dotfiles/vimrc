@@ -237,3 +237,8 @@ augroup LSP
 augroup END
 
 let g:echodoc#enable_at_startup = 1
+
+"security settings for gopass
+"https://github.com/gopasspw/gopass/blob/master/docs/setup.md#securing-your-editor
+au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+au BufNewFile,BufRead /private/**/gopass** setlocal noswapfile nobackup noundofile
