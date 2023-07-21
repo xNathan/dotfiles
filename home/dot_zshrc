@@ -1,0 +1,59 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+if [[ ! -d $HOME/.zgen ]]; then
+    git clone https://github.com/tarjoilija/zgen.git $HOME/.zgen
+fi
+
+# disable zgen autoload prezto default config
+export ZGEN_PREZTO_LOAD_DEFAULT=0
+
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
+
+# if the init scipt doesn't exist
+if ! zgen saved; then
+
+    echo "Creating a zgen save"
+
+    # prezto options
+    zgen prezto '*:*' color 'yes'
+    zgen prezto editor key-bindings 'vi'
+    zgen prezto prompt theme 'powerlevel10k'
+
+    # prezto and modules
+    zgen prezto
+    # Common modules
+    zgen prezto editor
+    zgen prezto archive
+    zgen prezto git
+    zgen prezto gpg
+    zgen prezto docker
+    zgen prezto rsync
+    zgen prezto python
+    zgen prezto directory
+    zgen prezto history
+    zgen prezto gnu-utility # before utility
+    zgen prezto utility
+    zgen prezto completion  # must be loaded after utility
+    zgen prezto autosuggestions
+    zgen prezto tmux
+    zgen prezto command-not-found
+    zgen prezto fasd  # loaded after completion
+    zgen prezto syntax-highlighting  # before prompt and history-substring-search
+    zgen prezto history-substring-search
+    zgen prezto prompt
+
+    zgen save
+fi
+
+# Load all files from ~/zshrc.d directory
+if [ -d $HOME/.zshrc.d ]; then
+  for file in $HOME/.zshrc.d/*.zsh; do
+    source $file
+  done
+fi

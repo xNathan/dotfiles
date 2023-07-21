@@ -1,22 +1,9 @@
-# Dotfiles
+# xNathan/dotfiles
 
-个人使用的 dotfiles。
+个人使用的 dotfiles，使用 [chezmoi](https://www.chezmoi.io) 维护。
 
-# 安装：
+# 安装
 
 ```bash
-$ git clone https://github.com/xNathan/dotfiles.git ~/.dotfiles
-
-$ brew install libmagic  # for macOS
-$ pipx install dotdrop
-
-$ dotdrop install -p mac
-# 如果是 Archlinux，运行：
-$ dotdrop install -p arch
+$ sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply xNathan
 ```
-
-# 依赖：
-
-Python 3.6+
-
-字体： [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts)
