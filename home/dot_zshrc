@@ -5,50 +5,55 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-if [[ ! -d $HOME/.zgen ]]; then
-    git clone https://github.com/tarjoilija/zgen.git $HOME/.zgen
+if [[ ! -d $HOME/.zgenom ]]; then
+    git clone https://github.com/jandamm/zgenom.git $HOME/.zgenom
 fi
 
-# disable zgen autoload prezto default config
-export ZGEN_PREZTO_LOAD_DEFAULT=0
+# disable zgenom autoload prezto default config
+export zgenom_PREZTO_LOAD_DEFAULT=0
 
-# load zgen
-source "${HOME}/.zgen/zgen.zsh"
+# load zgenom
+source "${HOME}/.zgenom/zgenom.zsh"
+
+zgenom autoupdate
 
 # if the init scipt doesn't exist
-if ! zgen saved; then
+if ! zgenom saved; then
 
-    echo "Creating a zgen save"
+    echo "Creating a zgenom save"
 
     # prezto options
-    zgen prezto '*:*' color 'yes'
-    zgen prezto editor key-bindings 'vi'
-    zgen prezto prompt theme 'powerlevel10k'
+    zgenom prezto '*:*' color 'yes'
+    zgenom prezto editor key-bindings 'vi'
+    zgenom prezto prompt theme 'powerlevel10k'
 
     # prezto and modules
-    zgen prezto
+    zgenom prezto
     # Common modules
-    zgen prezto editor
-    zgen prezto archive
-    zgen prezto git
-    zgen prezto gpg
-    zgen prezto docker
-    zgen prezto rsync
-    zgen prezto python
-    zgen prezto directory
-    zgen prezto history
-    zgen prezto gnu-utility # before utility
-    zgen prezto utility
-    zgen prezto completion  # must be loaded after utility
-    zgen prezto autosuggestions
-    zgen prezto tmux
-    zgen prezto command-not-found
-    zgen prezto fasd  # loaded after completion
-    zgen prezto syntax-highlighting  # before prompt and history-substring-search
-    zgen prezto history-substring-search
-    zgen prezto prompt
+    zgenom prezto editor
+    zgenom prezto archive
+    zgenom prezto git
+    zgenom prezto gpg
+    zgenom prezto docker
+    zgenom prezto rsync
+    zgenom prezto python
+    zgenom prezto directory
+    zgenom prezto history
+    zgenom prezto gnu-utility # before utility
+    zgenom prezto utility
+    zgenom prezto completion  # must be loaded after utility
+    zgenom prezto autosuggestions
+    zgenom prezto tmux
+    zgenom prezto command-not-found
+    zgenom prezto fasd  # loaded after completion
+    zgenom prezto syntax-highlighting  # before prompt and history-substring-search
+    zgenom prezto history-substring-search
+    zgenom prezto prompt
 
-    zgen save
+    zgenom save
+
+    zgenom compile "$HOME/.zshrc"
+    zgenom compile "$HOME/.zshrc.d/"
 fi
 
 # Load all files from ~/zshrc.d directory
