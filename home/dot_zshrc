@@ -9,9 +9,6 @@ if [[ ! -d $HOME/.zgenom ]]; then
     git clone https://github.com/jandamm/zgenom.git $HOME/.zgenom
 fi
 
-# disable zgenom autoload prezto default config
-export zgenom_PREZTO_LOAD_DEFAULT=0
-
 # load zgenom
 source "${HOME}/.zgenom/zgenom.zsh"
 
