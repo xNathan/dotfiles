@@ -47,6 +47,10 @@ if ! zgenom saved; then
     zgenom prezto history-substring-search
     zgenom prezto prompt
 
+    if type brew &>/dev/null; then
+        zgenom load --completion "$(brew --prefix)/share/zsh/site-functions"
+    fi
+
     zgenom save
 
     zgenom compile "$HOME/.zshrc"
