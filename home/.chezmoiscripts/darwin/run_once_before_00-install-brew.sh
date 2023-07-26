@@ -25,6 +25,7 @@ brew "rtx"
 brew "tree"
 brew "watch"
 brew "gnupg"
+brew "pinentry-mac"
 
 # python requirements
 brew "openssl@3"
@@ -44,7 +45,6 @@ cask "raycast"
 cask "rectangle"
 cask "shottr"
 cask "squirrel"
-cask "pinentry-mac"
 cask "karabiner-elements"
 cask "visual-studio-code"
 
