@@ -44,6 +44,7 @@ cask "raycast"
 cask "rectangle"
 cask "shottr"
 cask "squirrel"
+cask "pinentry-mac"
 cask "karabiner-elements"
 cask "visual-studio-code"
 
