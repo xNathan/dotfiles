@@ -25,6 +25,7 @@ brew "rtx"
 brew "tree"
 brew "watch"
 brew "gnupg"
+brew "git"
 brew "pinentry-mac"
 
 # python requirements
@@ -55,4 +56,6 @@ vscode "ms-azuretools.vscode-docker"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
 vscode "vscodevim.vim"
+vscode "PKief.material-icon-theme"
+vscode "zhuangtongfa.material-theme"
 EOF
