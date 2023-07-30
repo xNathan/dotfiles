@@ -7,7 +7,7 @@ else
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-brew bundle --no-lock --file=/dev/stdin <<EOF
+brew bundle --no-lock --force --file=/dev/stdin <<EOF
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 
