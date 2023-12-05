@@ -3,7 +3,7 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export GOPATH=$HOME/go
 
-export PATH="$HOME/.poetry/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 if [[ "$(command -v nvim)" ]]; then
     export EDITOR=nvim
