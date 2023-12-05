@@ -120,7 +120,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
-Plug 'junegunn/fzf', { 'do': './install --key-bindings --completion --no-update-rc' }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'godlygeek/tabular'

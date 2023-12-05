@@ -1,4 +1,5 @@
 #!/bin/bash
+export PATH=/opt/homebrew/bin:/usr/local/bin:$PATH
 
 if command -v brew >/dev/null 2>&1; then
     echo "Homebrew installed"
@@ -18,6 +19,7 @@ brew "direnv"
 brew "docker-compose"
 brew "fd"
 brew "lsd"
+brew "fzf"
 brew "neovim"
 brew "tmux"
 brew "ripgrep"
@@ -60,3 +62,6 @@ vscode "vscodevim.vim"
 vscode "PKief.material-icon-theme"
 vscode "zhuangtongfa.material-theme"
 EOF
+
+
+$(brew --prefix)/opt/fzf/install --key-bindings --completion --no-update-rc
