@@ -1,4 +1,8 @@
 default-cache-ttl-ssh 43200
 max-cache-ttl-ssh 86400
 enable-ssh-support
+{{ if eq .chezmoi.os "darwin" }}
 pinentry-program {{ output "brew" "--prefix" | trim }}/bin/pinentry-mac
+{{ else if eq .chezmoi.os "linux" }}
+# TODO
+{{ end }}
