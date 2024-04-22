@@ -11,3 +11,8 @@ defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 #Enable key repeat in VSCodeVim
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+# Or enable globally
+# defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Disable rearrange workspace
+defaults write com.apple.dock "mru-spaces" -bool "false"
