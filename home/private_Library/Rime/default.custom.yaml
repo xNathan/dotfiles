@@ -1,6 +1,6 @@
 patch:
   schema_list:
-    - schema: wubi86_jidian
+    - schema: wubi86_jidian_pinyin
     - schema: double_pinyin_flypy
   switcher/hotkeys:
     # Conflict with VSCode
