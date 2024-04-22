@@ -11,6 +11,10 @@ zgenom autoupdate
 if ! zgenom saved; then
 
     echo "Creating a zgenom save"
+    
+    # load ohmyzsh plugins
+    zgenom ohmyzsh
+    zgenom ohmyzsh plugins/tmux
 
     # prezto options
     zgenom prezto '*:*' color 'yes'
@@ -32,12 +36,11 @@ if ! zgenom saved; then
     zgenom prezto gnu-utility # before utility
     zgenom prezto utility
     zgenom prezto completion  # must be loaded after utility
-    zgenom prezto autosuggestions
-    zgenom prezto tmux
     zgenom prezto command-not-found
     zgenom prezto fasd  # loaded after completion
     zgenom prezto syntax-highlighting  # before prompt and history-substring-search
     zgenom prezto history-substring-search
+    zgenom prezto autosuggestions  # after syntax-highlighting, after history-substring-search
     zgenom prezto prompt
 
     if type brew &>/dev/null; then
