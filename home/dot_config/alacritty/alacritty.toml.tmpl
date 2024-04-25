@@ -12,9 +12,8 @@ size = 18.0
 family = "Hack Nerd Font Mono"
 
 [window]
-{{ if eq .chezmoi.os "darwin" }}
+{{- if eq .chezmoi.os "darwin" }}
 decorations = "Buttonless"
-{{ end }}
+{{- end }}
 padding = { x = 3, y = 3 }
 dynamic_padding = true
-opacity = 0.9
