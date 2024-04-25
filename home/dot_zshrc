@@ -14,6 +14,7 @@ if ! zgenom saved; then
     
     # load ohmyzsh plugins
     zgenom ohmyzsh
+    zgenom ohmyzsh plugins/brew
     zgenom ohmyzsh plugins/tmux
     zgenom ohmyzsh plugins/mise
     zgenom ohmyzsh plugins/direnv
