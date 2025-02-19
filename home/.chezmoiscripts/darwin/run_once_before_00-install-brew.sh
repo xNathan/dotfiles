@@ -10,7 +10,6 @@ fi
 
 brew bundle --no-lock --force --file=/dev/stdin <<EOF
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 
 brew "bat"
 brew "chezmoi"
@@ -32,6 +31,8 @@ brew "gnupg"
 brew "git"
 brew "pinentry-mac"
 brew "wget"
+brew "starship"
+brew "zoxide"
 
 # python requirements
 brew "openssl@3"

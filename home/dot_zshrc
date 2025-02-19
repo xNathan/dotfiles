@@ -14,41 +14,21 @@ if ! zgenom saved; then
     
     # load ohmyzsh plugins
     zgenom ohmyzsh
+    zgenom ohmyzsh plugins/aliases
+    zgenom ohmyzsh plugins/command-not-found
     zgenom ohmyzsh plugins/brew
+    zgenom ohmyzsh plugins/git
+    zgenom ohmyzsh plugins/fzf
     zgenom ohmyzsh plugins/tmux
     zgenom ohmyzsh plugins/mise
     zgenom ohmyzsh plugins/direnv
+    zgenom ohmyzsh plugins/gpg-agent
+    zgenom ohmyzsh plugins/zoxide
+    zgenom ohmyzsh plugins/starship
 
-    # prezto options
-    zgenom prezto '*:*' color 'yes'
-    zgenom prezto editor key-bindings 'vi'
-    zgenom prezto prompt theme 'powerlevel10k'
-
-    # prezto and modules
-    zgenom prezto
-    # Common modules
-    zgenom prezto editor
-    zgenom prezto archive
-    zgenom prezto git
-    zgenom prezto gpg
-    zgenom prezto docker
-    zgenom prezto rsync
-    zgenom prezto python
-    zgenom prezto directory
-    zgenom prezto history
-    zgenom prezto gnu-utility # before utility
-    zgenom prezto utility
-    zgenom prezto completion  # must be loaded after utility
-    zgenom prezto command-not-found
-    zgenom prezto fasd  # loaded after completion
-    zgenom prezto syntax-highlighting  # before prompt and history-substring-search
-    zgenom prezto history-substring-search
-    zgenom prezto autosuggestions  # after syntax-highlighting, after history-substring-search
-    zgenom prezto prompt
-
-    if type brew &>/dev/null; then
-        zgenom load --completion "$(brew --prefix)/share/zsh/site-functions"
-    fi
+    zgenom load zsh-users/zsh-syntax-highlighting
+    zgenom load zsh-users/zsh-autosuggestions
+    zgenom load zsh-users/zsh-completions
 
     zgenom save
 
